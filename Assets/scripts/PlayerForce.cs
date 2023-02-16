@@ -22,12 +22,19 @@ public class PlayerForce : MonoBehaviour
     {
         mainBody.velocity = Vector3.zero;
 
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            RightArmBody.AddForce(transform.up * power, ForceMode2D.Impulse);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            LeftArmBody.AddForce(transform.up * power, ForceMode2D.Impulse);
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            //mySource.clip = jumpClip;
-            //mySource.Play();
-            //mySource.PlayOneShot(jumpClip);
-            LeftArmBody.AddForce(transform.up * power, ForceMode2D.Impulse);
+            LeftLegBody.AddForce(transform.up * power, ForceMode2D.Impulse);
+            RightLegBody.AddForce(transform.up * power, ForceMode2D.Impulse);
+
         }
 
         if (Input.GetKey(KeyCode.W))
