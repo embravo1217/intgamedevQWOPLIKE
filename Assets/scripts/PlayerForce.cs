@@ -8,6 +8,7 @@ public class PlayerForce : MonoBehaviour
     public Rigidbody2D RightArmBody;
     public Rigidbody2D LeftLegBody;
     public Rigidbody2D RightLegBody;
+    public Rigidbody2D mainBody;
     public float power;
 
     // Start is called before the first frame update
@@ -19,7 +20,7 @@ public class PlayerForce : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //mainBody.velocity = Vector3.zero;
+        mainBody.velocity = Vector3.zero;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -31,19 +32,19 @@ public class PlayerForce : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            //mainBody.velocity = new Vector3(0, power, 0);
+            mainBody.velocity = new Vector3(0, power, 0);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            //mainBody.velocity = new Vector3(0, -power, 0);
+            mainBody.velocity = new Vector3(0, -power, 0);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            //mainBody.velocity = new Vector3(-power, 0, 0);
+            mainBody.velocity = new Vector3(-power, 0, 0);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            //mainBody.velocity = new Vector3(power, 0, 0);
+            mainBody.velocity = new Vector3(power, 0, 0);
         }
     }
 }
